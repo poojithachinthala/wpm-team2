@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store</title>
+    <link rel="stylesheet" href="st.css">
+    <style>
+        /* Search bar styles */
+        .search-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .search-container input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Online Grocery Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#cart">Cart</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="#checkout">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="product-search" placeholder="Search for products...">
+    </div>
+
+    <!-- Product List Section -->
+    <section id="products" class="product-section">
+        <h2>Available Products</h2>
+        <div class="product-list">
+            <!-- Fruits -->
+            <div class="product-card">
+                <img src="https://png.pngtree.com/png-clipart/20230126/original/pngtree-fresh-red-apple-png-image_8930987.png" alt="Apple">
+                <h3>Apple</h3>
+                <p class="price">RS 30/- </p>
+                <button class="add-to-cart" data-product-id="1" data-product-name="Apple" data-product-price="1.99">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/R.ab76619e1eb34d9f6d53ad1c0968fa07?rik=dd%2fF48dk3KZ%2fAw&riu=http%3a%2f%2fhealthimpactnews.com%2fwp-content%2fuploads%2fsites%2f2%2f2011%2f03%2fimages5-150x150.jpg&ehk=SeHkTMrZFV3fIyF01qXyGHm6E4%2fP%2f%2f6mGyxl%2b%2f%2f2xao%3d&risl=&pid=ImgRaw&r=0" alt="Banana">
+                <h3>Banana</h3>
+                <p class="price">RS 30/- </p>
+                <button class="add-to-cart" data-product-id="2" data-product-name="Banana" data-product-price="0.99">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://img.freepik.com/premium-psd/orange-fruit-isolated-transparent-background-with-clipping-path_410516-132945.jpg?w=1380" alt="Orange">
+                <h3>Orange</h3>
+                <p class="price">RS 100/-</p>
+                <button class="add-to-cart" data-product-id="3" data-product-name="Orange" data-product-price="1.49">Add to Cart</button>
+            </div>
+
+            <!-- Vegetables -->
+            <div class="product-card">
+                <img src="https://www.alamy.com/aggregator-api/download?url=https://c8.alamy.com/comp/DCMAYH/fresh-carrot-fruits-with-green-leaves-isolated-on-white-background-DCMAYH.jpg" alt="Carrot">
+                <h3>Carrot</h3>
+                <p class="price">RS 20/-</p>
+                <button class="add-to-cart" data-product-id="4" data-product-name="Carrot" data-product-price="0.89">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://cdn.britannica.com/25/78225-050-1781F6B7/broccoli-florets.jpg" alt="Broccoli">
+                <h3>Broccoli</h3>
+                <p class="price">RS 10/-</p>
+                <button class="add-to-cart" data-product-id="5" data-product-name="Broccoli" data-product-price="1.99">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.6ByLc_Vd3HVsdD3jcCaJggHaJ4?rs=1&pid=ImgDetMain" alt="Tomato">
+                <h3>Tomato</h3>
+                <p class="price">RS 20/-</p>
+                <button class="add-to-cart" data-product-id="6" data-product-name="Tomato" data-product-price="0.79">Add to Cart</button>
+            </div>
+
+            <!-- Dairy -->
+            <div class="product-card">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e45dbd30002723.560e318db2d47.jpg" alt="Milk">
+                <h3>Milk</h3>
+                <p class="price">RS 30/- / gallon</p>
+                <button class="add-to-cart" data-product-id="7" data-product-name="Milk" data-product-price="2.99">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://www.mandourlaw.com/wp-content/uploads/2013/08/Cheese-150x150.jpg" alt="Cheese">
+                <h3>Cheese</h3>
+                <p class="price">RS 50/-</p>
+                <button class="add-to-cart" data-product-id="8" data-product-name="Cheese" data-product-price="4.99">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://clipartmag.com/images/butter-png-clipart-40.jpg" alt="Butter">
+                <h3>Butter</h3>
+                <p class="price">RS 40/- pack</p>
+                <button class="add-to-cart" data-product-id="9" data-product-name="Butter" data-product-price="3.49">Add to Cart</button>
+            </div>
+
+            <!-- Packaged Goods -->
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/R.95798e1a14c59e9ae1cb3ee48e31328e?rik=DPwhFdxIzbAu0Q&riu=http%3a%2f%2fwww.crunchycreamysweet.com%2fwp-content%2fuploads%2f2014%2f03%2fcreamy-dill-chicken-pasta-150x150.jpg&ehk=ygNZozU6UOzr9wvofk9Clmuw%2bIIjiPoWcLZRb9usI70%3d&risl=&pid=ImgRaw&r=0" alt="Pasta">
+                <h3>Pasta</h3>
+                <p class="price">RS 30/- / pack</p>
+                <button class="add-to-cart" data-product-id="10" data-product-name="Pasta" data-product-price="1.49">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.fdvRnKfogForq-CqCnRlFAHaHa?rs=1&pid=ImgDetMain" alt="Rice">
+                <h3>Rice</h3>
+                <p class="price">RS 100/- / 10 bag</p>
+                <button class="add-to-cart" data-product-id="11" data-product-name="Rice" data-product-price="10.99">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart" class="cart-section">
+        <h2>Your Cart</h2>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Dynamic Cart Items will be added here -->
+            </tbody>
+        </table>
+        <div class="cart-summary">
+            <p><strong>Total Amount: RS <span id="cart-total">0.00</span></strong></p>
+        </div>
+        <button id="checkout" class="checkout-btn">Checkout</button>
+    </section>
+
+    <script src="st.js"></script>
+    <script>
+        // Product Search Functionality
+        document.getElementById('product-search').addEventListener('input', function() {
+            const searchValue = this.value.toLowerCase();
+            const products = document.querySelectorAll('.product-card');
+
+            products.forEach(product => {
+                const productName = product.getAttribute('data-name').toLowerCase();
+                if (productName.includes(searchValue)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

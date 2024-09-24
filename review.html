@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews - Grocery Store</title>
+    <link rel="stylesheet" href="st.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Customer Reviews</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li> <!-- Back to Home Page -->
+                <li><a href="about.html">About</a></li> <!-- Link to About Page -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Review Section -->
+    <section id="reviews" class="review-section">
+        <h2>Customer Reviews</h2>
+
+        <!-- Display Reviews -->
+        <div id="review-list">
+            <!-- Dynamic reviews will be displayed here -->
+        </div>
+
+        <!-- Form to Submit a New Review -->
+        <h3>Leave a Review</h3>
+        <form id="review-form">
+            <label for="review-text">Review:</label>
+            <textarea id="review-text" required></textarea>
+
+            <label for="review-rating">Rating:</label>
+            <select id="review-rating" required>
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Good</option>
+                <option value="3">3 - Average</option>
+                <option value="2">2 - Poor</option>
+                <option value="1">1 - Terrible</option>
+            </select>
+
+            <button type="submit">Submit Review</button>
+        </form>
+    </section>
+
+    <script>
+        // Store reviews in an array
+        let reviews = [];
+
+        // Function to display reviews
+        function displayReviews() {
+            const reviewList = document.getElementById('review-list');
+            reviewList.innerHTML = '';
+            reviews.forEach(review => {
+                reviewList.innerHTML += `
+                    <div class="review-item">
+                        <p>${review.text}</p>
+                        <p><strong>Rating:</strong> ${review.rating} / 5</p>
+                    </div>
+                `;
+            });
+        }
+
+        // Handle form submission
+        document.getElementById('review-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const reviewText = document.getElementById('review-text').value;
+            const reviewRating = document.getElementById('review-rating').value;
+            reviews.push({ text: reviewText, rating: reviewRating });
+            displayReviews();
+            this.reset(); // Reset form after submission
+        });
+
+        // Initial call to display any existing reviews
+        displayReviews();
+    </script>
+</body>
+</html>
